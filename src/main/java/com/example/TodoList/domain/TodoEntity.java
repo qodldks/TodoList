@@ -26,4 +26,12 @@ public class TodoEntity {
         this.content = content;
         this.completed = completed;
     }
+
+    public void updateContent(String content){
+        this.content = content;
+    }
+
+    public void updateCompleted(Boolean completed){
+        this.completed = completed;
+    }
 }
