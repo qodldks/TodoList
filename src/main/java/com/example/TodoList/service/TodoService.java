@@ -40,12 +40,20 @@ public class TodoService {
 
     @Transactional
     public Long updateById(Long id, TodoRequestDto requestDto) {
-        //id 값을 통해 DB접속
+        //id 값을 통해 DB 접속
         TodoEntity todoEntity = todoRepository.findById(id).orElse(new TodoEntity());
         //수정
         todoEntity.updateContent(requestDto.getContent());
         todoEntity.updateCompleted(requestDto.getCompleted());
 
         return todoEntity.getId();
+    }
+
+    public void deleteAll() {
+        todoRepository.deleteAll();
+    }
+
+    public void deleteOne(Long id) {
+        todoRepository.deleteById(id);
     }
 }

@@ -34,4 +34,16 @@ public class TodoController {
     public Long update(@RequestBody TodoRequestDto requestDto, @PathVariable Long id){
         return todoService.updateById(id, requestDto);
     }
+
+    //전체 삭제
+    @DeleteMapping("/todo/api")
+    public void deleteAll(){
+        todoService.deleteAll();
+    }
+
+    //해당 엔티티 삭제
+    @DeleteMapping("/todo/api/{id}")
+    public void deleteOne(@PathVariable Long id){
+        todoService.deleteOne(id);
+    }
 }
