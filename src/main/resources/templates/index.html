@@ -24,7 +24,7 @@
                     <td th:text="${entity.id}"></td>
                     <td th:text="${entity.content}"></td>
                     <td th:text="${entity.completed}"></td>
-                    <td><button>삭제</button></td>
+                    <td><button th:onclick="deleteEntity([[${entity.id}]])">삭제</button></td>
                 </tr>
             </tbody>
         </table>
